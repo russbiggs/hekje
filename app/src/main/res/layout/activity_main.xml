@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/txt">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Welcome in Heke 2.0"
+        android:id="@+id/welcome"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="30dp" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/layout4"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/newgrid"
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:text="New Grid"
+            android:onClick="sendmessage"
+            android:clickable="true"
+            android:elegantTextHeight="true"
+            android:textStyle="bold"
+            android:padding="20dp"
+            android:textSize="16dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+
+</LinearLayout>

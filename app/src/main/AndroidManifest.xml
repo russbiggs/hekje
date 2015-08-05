@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="arthur.heksbox" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />;
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="Hekje 2.0"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="Hekje 2.0" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+        <activity
+            android:name=".CreateGrid"
+            android:label="Create new grid"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="arthur.heksbox.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Record"
+            android:label="Walk the line"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="arthur.heksbox.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
