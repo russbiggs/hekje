@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.IOException;
 
 /* create manually a repertory on the sdCard /hekje/output/*/
 
@@ -56,15 +58,11 @@ public class CreateGrid extends ActionBarActivity{
                 String ySi = ySize.getText().toString();
                 int yS = Integer.valueOf(ySi);
                 String xRe = xRes.getText().toString();
-                Double xR = Double.valueOf(xRe);
+                double xR = Double.parseDouble(xRe);
                 String yRe = yRes.toString();
                 Double yR = Double.valueOf(xRe);
                 boolean walkingmode;
-                if (walking.getCheckedRadioButtonId() == R.id.zigzag) {
-                    walkingmode = true;
-                } else {
-                    walkingmode = false;
-                }
+                walkingmode = walking.getCheckedRadioButtonId() == R.id.zigzag;
 
                 if(!id.equals("") & !xSi.equals("") & !ySi.equals("") & !xRe.equals("") & !yRe.equals("") & xR!=0 & yR!=0 & xS!=0 & yS!=0 & xS%xR==0 & yS%yR==0) {
 
@@ -114,6 +112,12 @@ public class CreateGrid extends ActionBarActivity{
             } else {
                 fileAlreadyExist = true;
             }
+            try {
+                newxmlfile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
         return fileAlreadyExist;
     }
